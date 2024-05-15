@@ -1,0 +1,17 @@
+---
+- name: Instalacion por defecto
+  hosts: localhost
+
+  tasks:
+    - name: update
+      shell: sudo apt -y update && sudo apt -y upgrade
+    - name: net-tools
+      shell: apt install -y net-tools
+    - name: git
+      shell: apt install -y git
+    - name: docker
+      shell: sudo apt install -y docker.io && sudo apt install -y docker-compose
+    - name: portainer
+      shell: git clone https://github.com/drubb/docker-compose-portainer.git
+    - name: exec portainer
+      shell: cd docker-compose-portainer && docker-compose up -d

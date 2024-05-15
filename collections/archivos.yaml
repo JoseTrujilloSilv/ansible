@@ -1,0 +1,10 @@
+---
+- name: Esto es una prueba para incluir contenido de archivos
+  hosts: localhost
+
+  tasks:
+    - name: Crea el nuevo archivo
+      shell: touch prueba.txt
+    
+    - name: mete el contenido de un archivo creado a este.
+      shell: holamundo.txt>prueba.txt

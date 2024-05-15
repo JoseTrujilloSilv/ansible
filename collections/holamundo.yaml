@@ -1,0 +1,12 @@
+---
+- name: Crea y escribe un holamundo en un archivo holamundo.txt
+  hosts: localhost
+
+  tasks:
+    - name: Crea el archivo en el mismo directorio
+      shell: touch holamundo.txt
+    
+    - name: Ecribe holamundo en el archivo
+      lineinfile:
+        path: ./holamundo.txt
+        line: Hola mundo!!

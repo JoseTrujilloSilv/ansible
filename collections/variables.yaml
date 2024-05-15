@@ -1,0 +1,17 @@
+---
+- name: Crea y escribe un holamundo en un archivo holamundo.txt
+  hosts: localhost
+
+  tasks:
+
+    - name: Vacia el archivo
+      shell: echo>holamundo.txt
+
+    - name: Ecribe holamundo en el archivo
+      lineinfile:
+        path: holamundo.txt
+        line: "{{ text }}"
+
+    - name:
+      debug:
+        msg: "El contenido de holamundo.txt es: {{ text }}"
