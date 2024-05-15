@@ -1,17 +1,18 @@
+#ESTO ES UNA INSTALACIÓN POR DEFECTO DE UN SERVIDOR CON DOCKER
 ---
 - name: Instalacion por defecto
   hosts: localhost
 
   tasks:
     - name: update
-      shell: sudo apt -y update && sudo apt -y upgrade
+      shell: sudo apt -y update && sudo apt -y upgrade #Actualiza el sistema
     - name: net-tools
-      shell: apt install -y net-tools
+      shell: apt install -y net-tools #instala ifconfig para ver tu ip
     - name: git
-      shell: apt install -y git
+      shell: apt install -y git #instala git para realizar la instalación de portainer
     - name: docker
-      shell: sudo apt install -y docker.io && sudo apt install -y docker-compose
+      shell: sudo apt install -y docker.io && sudo apt install -y docker-compose #instala docker
     - name: portainer
-      shell: git clone https://github.com/drubb/docker-compose-portainer.git
+      shell: git clone https://github.com/drubb/docker-compose-portainer.git #Realiza la importación de portainer
     - name: exec portainer
-      shell: cd docker-compose-portainer && docker-compose up -d
+      shell: cd docker-compose-portainer && docker-compose up -d #Levanta el contenedor de portainer, puerto 8080 
